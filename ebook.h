@@ -3,6 +3,7 @@
 
 #include "book.h"
 
+// Оголошення класу EBook — нащадка класу Book
 class EBook : virtual public Book {
 protected:
     double fileSize;
@@ -12,7 +13,7 @@ public:
     EBook();
     int SetFileSize(double s);
     int SetFormat(string f);
-    virtual int Describe() override;
+    virtual int Describe() override; //для перевизначення в інших клас
     virtual ~EBook();
 };
 

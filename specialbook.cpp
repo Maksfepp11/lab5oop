@@ -5,10 +5,11 @@ SpecialBook::SpecialBook() {
 }
 
 SpecialBook::~SpecialBook() {
-    cout << "Знищено спецкнигу\n";
+    cout << "Знищено спецкнигу: \"" << title << "\"\n";
 }
 
 int SpecialBook::Describe() {
+     // Викликаємо метод Describe() базового класу
     Book::Describe();
     cout << "Жанр: " << genre << endl;
     cout << "Розмір файлу: " << fileSize << " МБ\n";

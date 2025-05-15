@@ -3,11 +3,14 @@
 
 #include "ebook.h"
 #include "fiction.h"
+#include "textbook.h" 
 
-class SpecialBook : public EBook, public Fiction {
+
+//Оголощення класу SpecialBook - нащадка ебук і фікшн
+class SpecialBook : public EBook, public Fiction, public Textbook {
 public:
     SpecialBook();
-    virtual int Describe() override;
+    virtual int Describe() override; //для перевизначення в інших клас
     virtual ~SpecialBook();
 };
 

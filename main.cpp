@@ -17,6 +17,7 @@ int main() {
     sb.SetFormat("PDF");
 
     sb.Describe();
-
+    //викликає дискрайб з спеціалбук, а він бук  а той паблікатіон
+    
     return 0;
 }
