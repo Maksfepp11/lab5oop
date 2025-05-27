@@ -1,23 +1,41 @@
 #define NOMINMAX  
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <iostream>
 #include "specialbook.h"
+#include "d.h"
+
+using namespace std;
 
 int main() {
     SetConsoleOutputCP(65001);
 
-    SpecialBook sb;
-    sb.SetTitle("Алгоритми");
-    sb.SetPublisher("Навчальна книга");
-    sb.SetYear(2024);
-    sb.SetAuthor("Іван Іваненко");
-    sb.SetPages(420);
-    sb.SetGenre("Навчальна література");
-    sb.SetFileSize(15.5);
-    sb.SetFormat("PDF");
+    {
+        // 🔷 Спочатку SpecialBook
+        SpecialBook sb;
+        sb.SetTitle("Алгоритми");
+        sb.SetAuthor("Іван Іваненко");
+        sb.SetPages(320);
+        sb.SetSubject("Інформатика");
+        sb.SetGrade(10);
+        sb.SetGenre("Наукова фантастика");
+        sb.SetFormat("PDF");
+        sb.SetFileSize(12.5);
+        sb.Describe();
+    } // <- Тут викликається деструктор SpecialBook і всіх базових класів
 
-    sb.Describe();
-    //викликає дискрайб з спеціалбук, а він бук  а той паблікатіон
-    
+    cout << "\n======= Далі створення D =======\n";
+
+    {
+        // 🔷 Потім D
+        D d;
+        d.SetName("Клас А");
+        d.SetLetter("шось класне");
+        d.SetSomething(250);
+        d.SetWhat("");
+        d.Describe();
+    } // <- Тут викликається деструктор D і всіх базових класів
+
     return 0;
 }
+

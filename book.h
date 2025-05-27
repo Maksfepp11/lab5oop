@@ -1,20 +1,23 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-#include "publication.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
-// Клас Book, який успадковує від класу Publication
-class Book : virtual public Publication {
+class Book {
 protected:
+    string title;
     string author;
     int pages;
 
 public:
-    Book();  // Конструктор класу 
-    int SetAuthor(string a);
-    int SetPages(int p);
-    virtual int Describe() override; //для перевизначення в інших клас
-    virtual ~Book(); //деструктор 
+    Book(); // Конструктор за замовчуванням, який ініціалізує значення
+    int SetTitle(string t);  // Метод для встановлення назви книги
+    int SetAuthor(string a); // Метод для встановлення атвора книги
+    int SetPages(int p); // Метод для встановлення ст в книзі
+    virtual int Describe(); // Віртуальний метод Describe, який буде перевизначений у похідних класах
+    virtual ~Book(); //деструктор
 };
 
 #endif

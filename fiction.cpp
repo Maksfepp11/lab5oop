@@ -5,17 +5,16 @@ Fiction::Fiction() : genre("") {
 }
 
 Fiction::~Fiction() {
-    cout << "Знищено художню книгу: \"" << title << "\" , " << genre << endl;
+    cout << "Знищено художню книгу \"" << title << "\" у жанрі " << genre << endl;
 }
 
-// Метод для встановлення значення жанру книги
 int Fiction::SetGenre(string g) {
     genre = g; // Присвоюємо значення жанру
     return 1; // Повертаємо 1 — успішне виконання
 }
 
+// Метод для опису публікації
 int Fiction::Describe() {
-     // Викликаємо метод Describe() базового класу
     Book::Describe();
     cout << "Жанр: " << genre << endl;
     return 1;

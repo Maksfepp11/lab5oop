@@ -1,17 +1,16 @@
 #ifndef SPECIALBOOK_H
 #define SPECIALBOOK_H
 
+#include "textbook.h"
 #include "ebook.h"
 #include "fiction.h"
-#include "textbook.h" 
 
-
-//Оголощення класу SpecialBook - нащадка ебук і фікшн
-class SpecialBook : public EBook, public Fiction, public Textbook {
+class SpecialBook : public Textbook, public EBook, public Fiction {
 public:
     SpecialBook();
-    virtual int Describe() override; //для перевизначення в інших клас
-    virtual ~SpecialBook();
+    int Describe() override;
+    int Describe(const string& extra);
+    ~SpecialBook();
 };
 
 #endif

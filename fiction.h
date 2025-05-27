@@ -3,16 +3,16 @@
 
 #include "book.h"
 
-// Оголошення класу Fiction — нащадка класу Book
-class Fiction : virtual public Book {
+
+class Fiction :  public virtual Book {
 protected:
     string genre;
 
 public:
     Fiction();
     int SetGenre(string g);
-    virtual int Describe() override; //для перевизначення в інших клас
-    virtual ~Fiction();
+    int Describe() override;
+    ~Fiction();
 };
 
 #endif
